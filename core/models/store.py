@@ -1,8 +1,11 @@
-""" Store model class """
+# METADATA
+__author__ = ['Carlo Laitano', 'Henrique Kops', 'Larissa Salerno']
+__date__ = '2019-11-11'
+__version__ = 0.1
 
 
 class StoreModel:
-
+    """ Store model class """
     __instance = None
 
     class __StoreModelInstance:
