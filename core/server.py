@@ -17,6 +17,7 @@ def build():
     __assign_resources(api)
     return app
 
+
 def __assign_resources(api):
     route = 0
     controller = 1
