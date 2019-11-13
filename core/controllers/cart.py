@@ -10,9 +10,14 @@ from flask import (
     make_response
 )
 
+# project dependencies
+from core.models.cart import CartModel
+
 
 class CartController(Resource):
 
-    @staticmethod
-    def get():
-        return make_response(render_template('cart.html'))
+    __model = CartModel()
+
+    def get(self):
+        products = self.__model.show()
+        return make_response(render_template('cart.html', products=products))

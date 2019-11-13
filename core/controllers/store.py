@@ -10,9 +10,14 @@ from flask import (
     make_response
 )
 
+# project dependencies
+from core.models.store import StoreModel
+
 
 class StoreController(Resource):
 
-    @staticmethod
-    def get():
-        return make_response(render_template('store.html', products=[]))
+    __model = StoreModel()
+
+    def get(self):
+        products = self.__model.show()
+        return make_response(render_template('store.html', products=products))
