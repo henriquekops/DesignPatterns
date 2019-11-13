@@ -22,7 +22,9 @@ class StoreController(Resource):
     __model = StoreModel()
 
     def __init__(self):
-        self.__service.generate_products(self.__model)
+        print(len(self.__model.show()))
+        if len(self.__model.show()) == 0:
+            self.__service.generate_products(self.__model)
 
     def get(self):
         products = self.__model.show()
