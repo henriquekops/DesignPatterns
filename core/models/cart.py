@@ -33,9 +33,11 @@ class CartModel:
             return self.__storage
 
         def verify_status_cart(self):
+            print(self.__status_cart)
+            print(self.__storage)
             if self.__status_cart != self.__storage:
                 print("\n######## Cart modified ########\n######## Owner was notyfied ######## ")
-                self.__status_cart = self.__storage
+                self.__status_cart = self.__storage.copy()
 
     instance = None
 
