@@ -10,6 +10,14 @@
         <h1>Everyone's Cart</h1>
         <p>This is a shared cart</p>
 
+        <table>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
         <input class="centered" value="Back" type="button" class="button_active" onclick="location.href='/';" />
     </div>
 </body>
