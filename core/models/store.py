@@ -13,15 +13,15 @@ class StoreModel:
             self.__products = list()
 
         def add(self, product):
-            """ Method to add products into sale list """
+            """Add products into sale list """
             self.__products.append(product)
 
         def rem(self, product_index):
-            """ Method to remove products into sale list """
+            """ Remove products from sale list """
             self.__products.pop(product_index)
 
         def show(self):
-            """ Method to show all products in store """
+            """ Show all products in store """
             return self.__products
 
     instance = None

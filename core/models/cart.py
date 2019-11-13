@@ -5,6 +5,7 @@ __version__ = 0.1
 
 
 class CartModel:
+    """ Cart model class """
 
     class __CartModelInstance:
 
@@ -12,12 +13,15 @@ class CartModel:
             self.__storage = list()
 
         def add(self, product):
+            """ Add product to the cart """
             return self.__storage.append(product)
 
         def rem(self, product_id):
+            """ Remove product from the cart """
             return self.__storage.pop(product_id)
 
         def show(self):
+            """ List all cart products """
             return self.__storage
 
     instance = None

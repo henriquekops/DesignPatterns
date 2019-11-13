@@ -15,6 +15,7 @@ from core.controllers import (
 
 
 def build():
+    """ Build the server """
     app = Flask(__name__)
     api = Api(app)
 

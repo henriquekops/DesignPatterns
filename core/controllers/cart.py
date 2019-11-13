@@ -15,6 +15,7 @@ from core.models.cart import CartModel
 
 
 class CartController(Resource):
+    """ Cart controller class """
 
     __model = CartModel()
 

@@ -15,6 +15,7 @@ from core.models.store import StoreModel
 
 
 class StoreController(Resource):
+    """ Store controller class """
 
     __model = StoreModel()
 

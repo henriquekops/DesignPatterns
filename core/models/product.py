@@ -15,6 +15,7 @@ class __Product(ABC):
 
 
 class HealthProduct(__Product):
+    """ Health product class """
 
     def __init__(self):
         self.name = "Health Product"
@@ -23,6 +24,7 @@ class HealthProduct(__Product):
 
 
 class TechProduct(__Product):
+    """ Tech product class """
 
     def __init__(self):
         self.name = "Tech Product"
@@ -31,6 +33,7 @@ class TechProduct(__Product):
 
 
 class HomeProduct(__Product):
+    """ Home product class """
 
     def __init__(self):
         self.name = "Home Product"
@@ -39,6 +42,7 @@ class HomeProduct(__Product):
 
 
 class ProductModel:
+    """ Generic product class """
 
     __classes = dict(
         health=HealthProduct,
