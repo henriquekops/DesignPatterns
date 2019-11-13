@@ -7,7 +7,8 @@ __version__ = 0.1
 from flask_restful import Resource
 from flask import (
     render_template,
-    make_response
+    make_response,
+    request
 )
 
 # project dependencies
@@ -20,5 +21,11 @@ class CartController(Resource):
     __model = CartModel()
 
     def get(self):
+        products = self.__model.show()
+        return make_response(render_template('cart.html', products=products))
+
+    def post(self):
+        product = request.form['product']
+        self.__model.add(product)
         products = self.__model.show()
         return make_response(render_template('cart.html', products=products))

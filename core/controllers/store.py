@@ -7,7 +7,8 @@ __version__ = 0.1
 from flask_restful import Resource
 from flask import (
     render_template,
-    make_response
+    make_response,
+    request
 )
 
 # project dependencies
@@ -27,10 +28,5 @@ class StoreController(Resource):
             self.__service.generate_products(self.__model)
 
     def get(self):
-        products = self.__model.show()
-        return make_response(render_template('store.html', products=products))
-
-    def delete(self, product_id):
-        self.__model.rem(product_id)
         products = self.__model.show()
         return make_response(render_template('store.html', products=products))
