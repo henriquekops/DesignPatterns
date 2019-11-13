@@ -14,7 +14,6 @@ class CartModel:
         def __init__(self):
             self.__storage = list()
 
-
         def add(self, product):
             """ Add product to the cart """
             self.__storage.append(product)
@@ -35,7 +34,7 @@ class CartModel:
 
         def verify_status_cart(self):
             if self.__status_cart != self.__storage:
-                print("\n######## Cart modified ########\n######## owner ######## ")
+                print("\n######## Cart modified ########\n######## Owner was notyfied ######## ")
                 self.__status_cart = self.__storage
 
     instance = None
