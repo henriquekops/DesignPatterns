@@ -11,14 +11,24 @@ from flask import (
 )
 
 # project dependencies
+from core.services.generic import GenericService
 from core.models.store import StoreModel
 
 
 class StoreController(Resource):
     """ Store controller class """
 
+    __service = GenericService()
     __model = StoreModel()
 
+    def __init__(self):
+        self.__service.generate_products(self.__model)
+
     def get(self):
+        products = self.__model.show()
+        return make_response(render_template('store.html', products=products))
+
+    def delete(self, product_id):
+        self.__model.rem(product_id)
         products = self.__model.show()
         return make_response(render_template('store.html', products=products))
