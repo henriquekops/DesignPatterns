@@ -9,20 +9,34 @@ class CartModel:
 
     class __CartModelInstance:
 
+        __status_cart = None
+
         def __init__(self):
             self.__storage = list()
 
+
         def add(self, product):
             """ Add product to the cart """
-            return self.__storage.append(product)
+            self.__storage.append(product)
+            self.verify_status_cart()
+
+            return self.__storage
 
         def rem(self, product_id):
             """ Remove product from the cart """
-            return self.__storage.pop(product_id)
+            self.__storage.pop(product_id)
+            self.verify_status_cart()
+
+            return self.__storage
 
         def show(self):
             """ List all cart products """
             return self.__storage
+
+        def verify_status_cart(self):
+            if self.__status_cart != self.__storage:
+                print("\n######## Cart modified ########\n######## owner ######## ")
+                self.__status_cart = self.__storage
 
     instance = None
 
